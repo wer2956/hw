@@ -1,0 +1,42 @@
+의용생체공학과 201738413 김지연 "PCA와 SVD의 차이점 정성적 요약"
+
+PCA (principal component analysis):
+- 정의: 
+  - Dataset에 있는 대량의 변수들 중 주성분을 추출하는 과정
+  - 추출된 주성분을 basis로 하여 선형변환을 수행
+  - 이 과정을 통해 dimension을 축소함
+  
+- 특징:
+  - feature나 dimension을 계산하고 중요도에 따라 값들을 순서화
+  - 이러한 계산과정에서 사용되는 것이 SVD (Singular Value Decomposition)
+  - SVD는 공분산 행렬에 적용되고, 이 계산이 feature의 중요도를 판별하게 함
+  - 데이터에서 가장 큰 분산을 갖는 축을 찾으며, 축들은 서로 orthogonal함
+  - 여기서의 축은 주성분(Principal Component; PC)
+  - 위 과정을 거쳐 데이터를 축에 projection할 시 차원이 축소됨
+  - 주로 데이터셋의 분석 및 시각화에 민감한 분야에 사용됨 (ex. 생물학)
+
+
+SVD (Singular Value Decomposition):
+- 정의:
+  - real number와 complex number 모두에 적용되는 분해
+  - 임의의 직사각행렬인 m x n 행렬 A를 3개의 행렬(A = UΣV*)로 분해
+  - Unitary matrix(U, m x m), Rectangular Diagonal matrix (Σ, m x n), Unitary matrix (V*, n x n)
+
+- 특징:
+  - 주로 자연어처리 분야에서 사용됨
+  - Sparse matrix(행렬 요소에 많은 값들이 0) 처리에 유용함(PCA에서 Eigendecomposition보다 많이 쓰이는 이유)
+
+product of two unitary matrices (U, V*) and a rectangular diagonal matrix of singular values (Σ):
+
+
+정리:
+- 즉, PCA와 SVD는 같다고 말할 수 있을 정도로 유사함
+- 엄밀하게는, SVD는 PCA를 수행하기 위한 하나의 계산도구가 될 수 있음의 차이
+- PCA와 SVD 모두 머신러닝에서 차원 축소에 사용되는 대표적 방법
+- PCA를 수행할 때 공분산 행렬에 Eigendecomposition을 적용해도 되지만, 효율성 측면에서 대체로 SVD를 사용하기 때문에 생긴 연관관계임
+
+
+
+출처:
+https://discuss.analyticsvidhya.com/t/please-explain-the-difference-between-svd-and-pca/58289/3
+https://towardsdatascience.com/pca-and-svd-explained-with-numpy-5d13b0d2a4d8
