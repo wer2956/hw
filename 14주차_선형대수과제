@@ -25,8 +25,7 @@ SVD (Singular Value Decomposition):
 - 특징:
   - 주로 자연어처리 분야에서 사용됨
   - Sparse matrix(행렬 요소에 많은 값들이 0) 처리에 유용함(PCA에서 Eigendecomposition보다 많이 쓰이는 이유)
-
-product of two unitary matrices (U, V*) and a rectangular diagonal matrix of singular values (Σ):
+  
 
 
 정리:
